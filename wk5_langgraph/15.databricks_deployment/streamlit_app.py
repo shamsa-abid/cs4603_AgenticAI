@@ -119,9 +119,9 @@ def ask_agent(client: openai.OpenAI, endpoint: str, history: list[dict]) -> str:
     """Send the conversation to the serving endpoint and return the reply text."""
     response = client.chat.completions.create(
         model=endpoint,
-        messages=history,
+        messages=history,  # type: ignore[arg-type]  # plain role/content dicts are accepted at runtime
     )
-    return response.choices[0].message.content
+    return response.choices[0].message.content or ""
 
 
 def main():

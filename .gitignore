@@ -221,5 +221,6 @@ __marimo__/
 mlflow.db
 mlruns/
 traces.json
+wk1_llm_basics/mlartifacts/
 
 .vscode/
